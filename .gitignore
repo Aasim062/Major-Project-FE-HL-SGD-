@@ -1,0 +1,19 @@
+# Large raw datasets (exceed GitHub 100MB limit)
+Dataset/raw/
+Dataset/processed/**/*.csv
+
+# Old folders (removed during restructure)
+MIMIC_Dataset/
+MIMIC_preprosessing/
+LSTM_Model_Training/
+Encryp_tenseal_lstm/
+
+# Reference C++ build artifacts
+reference/vcpkg/
+.dist/
+
+# Python
+__pycache__/
+*.pyc
+.env
+Dataset/  

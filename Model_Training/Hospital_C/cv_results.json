@@ -1,0 +1,48 @@
+{
+  "n_folds": 5,
+  "fold_metrics": [
+    {
+      "accuracy": 0.6666666666666666,
+      "auc_roc": 0.5555555555555555,
+      "f1_score": 0.4,
+      "threshold": 0.7499999999999998
+    },
+    {
+      "accuracy": 0.75,
+      "auc_roc": 0.6666666666666667,
+      "f1_score": 0.6666666666666666,
+      "threshold": 0.2
+    },
+    {
+      "accuracy": 0.625,
+      "auc_roc": 0.5833333333333334,
+      "f1_score": 0.4,
+      "threshold": 0.2
+    },
+    {
+      "accuracy": 0.625,
+      "auc_roc": 0.25,
+      "f1_score": 0.0,
+      "threshold": 0.5
+    },
+    {
+      "accuracy": 0.625,
+      "auc_roc": 0.39999999999999997,
+      "f1_score": 0.4,
+      "threshold": 0.5499999999999999
+    }
+  ],
+  "cv_average": {
+    "accuracy": 0.6583333333333333,
+    "auc_roc": 0.49111111111111116,
+    "f1_score": 0.37333333333333335,
+    "threshold": 0.43999999999999995
+  },
+  "best_fold": 2,
+  "final_model_metrics": {
+    "accuracy": 0.9512195121951219,
+    "auc_roc": 0.9913793103448276,
+    "f1_score": 0.9166666666666666,
+    "threshold": 0.5999999999999999
+  }
+}

@@ -1,0 +1,112 @@
+EVALUATION REPORT (STAGE 4.5)
+============================================================
+
+Dataset: 123 patients (87 survived, 36 died)
+Evaluation: Full dataset (all 123 patients)
+
+MODEL COMPARISON (Full Dataset Evaluation)
+------------------------------------------------------------
+Model            Acc      AUC      F1       Prec     Recall  
+---------------- -------- -------- -------- -------- --------
+Encrypted FL     0.2927   0.4984   0.4528   0.2927   1.0000  
+Plaintext FL     0.2927   0.4984   0.4528   0.2927   1.0000  
+Centralized      0.7886   0.8416   0.6750   0.6136   0.7500  
+Hospital A       0.8211   0.7085   0.6071   0.8500   0.4722  
+Hospital B       0.7561   0.7532   0.5946   0.5789   0.6111  
+Hospital C       0.7154   0.7363   0.5070   0.5143   0.5000  
+
+ENCRYPTED vs PLAINTEXT FL
+------------------------------------------------------------
+  Accuracy Difference:  0.000000
+  AUC-ROC Difference:   0.000000
+  F1-Score Difference:  0.000000
+  Verdict: IDENTICAL
+
+CRYPTOGRAPHIC OVERHEAD
+------------------------------------------------------------
+  Encryption (3 hospitals): 0.0211s
+  Aggregation:              0.0027s
+  Decryption:               0.0025s
+  Total Overhead:           0.0263s
+
+
+CLASSIFICATION REPORT: Encrypted FL
+----------------------------------------
+              precision    recall  f1-score   support
+
+    Survived       0.00      0.00      0.00        87
+        Died       0.29      1.00      0.45        36
+
+    accuracy                           0.29       123
+   macro avg       0.15      0.50      0.23       123
+weighted avg       0.09      0.29      0.13       123
+
+
+CLASSIFICATION REPORT: Plaintext FL
+----------------------------------------
+              precision    recall  f1-score   support
+
+    Survived       0.00      0.00      0.00        87
+        Died       0.29      1.00      0.45        36
+
+    accuracy                           0.29       123
+   macro avg       0.15      0.50      0.23       123
+weighted avg       0.09      0.29      0.13       123
+
+
+CLASSIFICATION REPORT: Centralized
+----------------------------------------
+              precision    recall  f1-score   support
+
+    Survived       0.89      0.80      0.84        87
+        Died       0.61      0.75      0.68        36
+
+    accuracy                           0.79       123
+   macro avg       0.75      0.78      0.76       123
+weighted avg       0.81      0.79      0.79       123
+
+
+CLASSIFICATION REPORT: Hospital A
+----------------------------------------
+              precision    recall  f1-score   support
+
+    Survived       0.82      0.97      0.88        87
+        Died       0.85      0.47      0.61        36
+
+    accuracy                           0.82       123
+   macro avg       0.83      0.72      0.75       123
+weighted avg       0.83      0.82      0.80       123
+
+
+CLASSIFICATION REPORT: Hospital B
+----------------------------------------
+              precision    recall  f1-score   support
+
+    Survived       0.84      0.82      0.83        87
+        Died       0.58      0.61      0.59        36
+
+    accuracy                           0.76       123
+   macro avg       0.71      0.71      0.71       123
+weighted avg       0.76      0.76      0.76       123
+
+
+CLASSIFICATION REPORT: Hospital C
+----------------------------------------
+              precision    recall  f1-score   support
+
+    Survived       0.80      0.80      0.80        87
+        Died       0.51      0.50      0.51        36
+
+    accuracy                           0.72       123
+   macro avg       0.65      0.65      0.65       123
+weighted avg       0.71      0.72      0.71       123
+
+
+GRAPHS GENERATED
+------------------------------------------------------------
+  1_model_comparison_bar.png   - Grouped bar chart (all metrics)
+  2_roc_curves.png             - ROC curves for all models
+  3_confusion_matrices.png     - Confusion matrices side-by-side
+  4_hospital_cv_comparison.png - Per-fold CV results by hospital
+  5_crypto_overhead.png        - Encryption timing breakdown
+  6_weight_distribution.png    - Encrypted vs plaintext weight analysis

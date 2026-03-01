@@ -1,0 +1,21 @@
+ENCRYPTION REPORT (STAGE 4.3)
+============================================================
+
+CKKS-RNS Parameters:
+  Poly Modulus Degree (N): 8192
+  Coeff Moduli: [60, 40, 40, 60] bits
+  Global Scale: 2^40
+  Security Level: 128-bit
+  Max Slots per Ciphertext: 4096
+
+Per-Hospital Encryption Time:
+  Hospital     Time (s)    
+  ------------ ------------
+  Hospital A    0.0074s
+  Hospital B    0.0068s
+  Hospital C    0.0069s
+  ------------ ------------
+  Total        0.0210s
+
+Model: MortalityLSTM (5,921 parameters)
+Ciphertext Chunks per Hospital: 2

@@ -1,0 +1,25 @@
+HOSPITAL B
+============================================================
+
+Dataset Information:
+  Total Patients: 41
+  Survived: 29
+  Died: 12
+  Mortality Rate: 29.3%
+
+Data Shape:
+  X: (41, 8, 8) (patients, max_days, features)
+  y: (41,) (patients,)
+
+Features (8):
+  1. age
+  2. gender
+  3. HeartRate
+  4. SysBP
+  5. RespRate
+  6. Temp
+  7. SpO2
+  8. Glucose
+
+Target:
+  hospital_expire_flag: 0=Survived, 1=Died

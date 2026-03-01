@@ -1,0 +1,344 @@
+C:\Users\dell\OneDrive\Desktop\MAJOR\Major-Project-FE-HL-SGD->C:/Users/dell/AppData/Local/Programs/Python/Python311/python.exe c:/Users/dell/OneDrive/Desktop/MAJOR/Major-Project-FE-HL-SGD-/LSTM_Model_Training/LSTM.py
+--- Loading Data ---
+  Raw CSV: 437 rows, 123 patients
+  Reshaped: X=(123, 8, 8), y=(123,)
+  Class distribution: Survived=87, Died=36
+  Train: 98 patients, Test: 25 patients
+
+Model Architecture:
+MortalityLSTM(
+  (lstm): LSTM(8, 64, num_layers=2, batch_first=True, dropout=0.3)
+  (classifier): Sequential(
+    (0): Linear(in_features=64, out_features=32, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.3, inplace=False)
+    (3): Linear(in_features=32, out_features=1, bias=True)
+    (4): Sigmoid()
+  )
+)
+Total Parameters: 54,337
+
+--- Training on cuda for 50 epochs ---
+  Epoch [1/50] Loss: 0.7017 Acc: 0.3163
+  Epoch [10/50] Loss: 0.6453 Acc: 0.7041
+  Epoch [20/50] Loss: 0.6239 Acc: 0.7041
+  Epoch [30/50] Loss: 0.5801 Acc: 0.7041
+  Epoch [40/50] Loss: 0.5473 Acc: 0.7143
+  Epoch [50/50] Loss: 0.5538 Acc: 0.7245
+
+==================================================
+  PLAINTEXT BASELINE RESULTS
+==================================================
+  Accuracy:  0.6800
+  AUC-ROC:   0.5635
+  F1-Score:  0.0000
+==================================================
+
+              precision    recall  f1-score   support
+
+    Survived       0.71      0.94      0.81        18
+        Died       0.00      0.00      0.00         7
+
+    accuracy                           0.68        25
+   macro avg       0.35      0.47      0.40        25
+weighted avg       0.51      0.68      0.58        25
+
+
+Model saved to: c:\Users\dell\OneDrive\Desktop\MAJOR\Major-Project-FE-HL-SGD-\LSTM_Model_Training\lstm_baseline.pth
+
+C:\Users\dell\OneDrive\Desktop\MAJOR\Major-Project-FE-HL-SGD->C:/Users/dell/AppData/Local/Programs/Python/Python311/python.exe c:/Users/dell/OneDrive/Desktop/MAJOR/Major-Project-FE-HL-SGD-/LSTM_Model_Training/LSTM.py
+--- Loading Data ---
+  Raw CSV: 437 rows, 123 patients
+  Reshaped: X=(123, 8, 8), y=(123,)
+  Class distribution: Survived=87, Died=36
+  Train: 98 patients, Test: 25 patients
+
+Model Architecture:
+MortalityLSTM(
+  (lstm): LSTM(8, 128, num_layers=3, batch_first=True, dropout=0.3)
+  (classifier): Sequential(
+    (0): Linear(in_features=128, out_features=64, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.3, inplace=False)
+    (3): Linear(in_features=64, out_features=32, bias=True)
+    (4): ReLU()
+    (5): Dropout(p=0.3, inplace=False)
+    (6): Linear(in_features=32, out_features=1, bias=True)
+  )
+)
+Total Parameters: 345,217
+  Class weight for 'Died': 2.42
+C:\Users\dell\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\optim\lr_scheduler.py:62: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn(
+
+--- Training on cuda for 200 epochs ---
+  Epoch [1/200] Loss: 0.9897 Acc: 0.2959
+  Epoch [20/200] Loss: 0.9849 Acc: 0.2959
+  Epoch [40/200] Loss: 0.9821 Acc: 0.2959
+  Epoch [60/200] Loss: 0.9840 Acc: 0.2959
+  Epoch [80/200] Loss: 0.9818 Acc: 0.3163
+  Epoch [100/200] Loss: 0.9820 Acc: 0.5714
+  Epoch [120/200] Loss: 0.9638 Acc: 0.5918
+  Epoch [140/200] Loss: 0.9326 Acc: 0.6122
+  Epoch [160/200] Loss: 0.9272 Acc: 0.6122
+  Epoch [180/200] Loss: 0.9892 Acc: 0.5204
+  Epoch [200/200] Loss: 0.9204 Acc: 0.6224
+  Best training loss: 0.8881
+
+==================================================
+  PLAINTEXT BASELINE RESULTS
+==================================================
+  Accuracy:  0.5200
+  AUC-ROC:   0.5079
+  F1-Score:  0.3333
+==================================================
+
+              precision    recall  f1-score   support
+
+    Survived       0.71      0.56      0.62        18
+        Died       0.27      0.43      0.33         7
+
+    accuracy                           0.52        25
+   macro avg       0.49      0.49      0.48        25
+weighted avg       0.59      0.52      0.54        25
+
+
+Model saved to: c:\Users\dell\OneDrive\Desktop\MAJOR\Major-Project-FE-HL-SGD-\LSTM_Model_Training\lstm_baseline.pth
+
+C:\Users\dell\OneDrive\Desktop\MAJOR\Major-Project-FE-HL-SGD->
+
+
+C:\Users\dell\OneDrive\Desktop\MAJOR\Major-Project-FE-HL-SGD->C:/Users/dell/AppData/Local/Programs/Python/Python311/python.exe c:/Users/dell/OneDrive/Desktop/MAJOR/Major-Project-FE-HL-SGD-/LSTM_Model_Training/LSTM.py
+--- Loading Data ---
+  Raw CSV: 437 rows, 123 patients
+  Reshaped: X=(123, 8, 8), y=(123,)
+  Class distribution: Survived=87, Died=36
+  Train: 98 patients, Test: 25 patients
+
+Model Architecture:
+MortalityLSTM(
+  (lstm): LSTM(8, 32, batch_first=True)
+  (classifier): Sequential(
+    (0): Linear(in_features=32, out_features=16, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=16, out_features=1, bias=True)
+  )
+)
+Total Parameters: 5,921
+  Class weight for 'Died': 2.42
+
+--- Training on cuda for 300 epochs ---
+  Epoch [1/300] Loss: 0.9885 Acc: 0.2959
+  Epoch [20/300] Loss: 0.9832 Acc: 0.5918
+  Epoch [40/300] Loss: 0.9675 Acc: 0.5510
+  Epoch [60/300] Loss: 0.9669 Acc: 0.5408
+  Epoch [80/300] Loss: 0.9487 Acc: 0.6020
+  Epoch [100/300] Loss: 0.9356 Acc: 0.7143
+  Epoch [120/300] Loss: 0.7978 Acc: 0.7959
+  Epoch [140/300] Loss: 0.6632 Acc: 0.8163
+  Epoch [160/300] Loss: 0.6700 Acc: 0.8163
+  Epoch [180/300] Loss: 0.6353 Acc: 0.8265
+  Epoch [200/300] Loss: 0.5753 Acc: 0.8469
+  Epoch [220/300] Loss: 0.5954 Acc: 0.8163
+  Epoch [240/300] Loss: 0.6125 Acc: 0.8265
+  Epoch [260/300] Loss: 0.5397 Acc: 0.8469
+  Epoch [280/300] Loss: 0.5526 Acc: 0.8673
+  Epoch [300/300] Loss: 0.5396 Acc: 0.8571
+  Best training loss: 0.5162
+
+==================================================
+  PLAINTEXT BASELINE RESULTS
+==================================================
+  Accuracy:  0.6400
+  AUC-ROC:   0.6429
+  F1-Score:  0.3077
+==================================================
+
+              precision    recall  f1-score   support
+
+    Survived       0.74      0.78      0.76        18
+        Died       0.33      0.29      0.31         7
+
+    accuracy                           0.64        25
+   macro avg       0.54      0.53      0.53        25
+weighted avg       0.62      0.64      0.63        25
+
+
+Model saved to: c:\Users\dell\OneDrive\Desktop\MAJOR\Major-Project-FE-HL-SGD-\LSTM_Model_Training\lstm_baseline.pth
+
+C:\Users\dell\OneDrive\Desktop\MAJOR\Major-Project-FE-HL-SGD->
+
+
+
+C:\Users\dell\OneDrive\Desktop\MAJOR\Major-Project-FE-HL-SGD->C:/Users/dell/AppData/Local/Programs/Python/Python311/python.exe c:/Users/dell/OneDrive/Desktop/MAJOR/Major-Project-FE-HL-SGD-/LSTM_Model_Training/LSTM.py
+--- Loading Data ---
+  Raw CSV: 437 rows, 123 patients
+  Reshaped: X=(123, 8, 8), y=(123,)
+  Class distribution: Survived=87, Died=36
+  Train: 98 patients, Test: 25 patients
+
+Model Architecture:
+MortalityLSTM(
+  (lstm): LSTM(8, 32, batch_first=True)
+  (classifier): Sequential(
+    (0): Linear(in_features=32, out_features=16, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=16, out_features=1, bias=True)
+  )
+)
+Total Parameters: 5,921
+  Class weight for 'Died': 2.42
+
+--- Training on cuda for 300 epochs ---
+  Epoch [1/300] Loss: 0.9879 Acc: 0.7041
+  Epoch [20/300] Loss: 0.9821 Acc: 0.3878
+  Epoch [40/300] Loss: 0.9697 Acc: 0.6633
+  Epoch [60/300] Loss: 0.9833 Acc: 0.3673
+  Epoch [80/300] Loss: 0.9644 Acc: 0.7041
+  Epoch [100/300] Loss: 0.9314 Acc: 0.6224
+  Epoch [120/300] Loss: 0.7350 Acc: 0.7551
+  Epoch [140/300] Loss: 0.7270 Acc: 0.7245
+  Epoch [160/300] Loss: 0.6616 Acc: 0.7755
+  Epoch [180/300] Loss: 0.6144 Acc: 0.7959
+  Epoch [200/300] Loss: 0.6864 Acc: 0.7551
+  Epoch [220/300] Loss: 0.6046 Acc: 0.8061
+  Epoch [240/300] Loss: 0.6015 Acc: 0.8265
+  Epoch [260/300] Loss: 0.6186 Acc: 0.8265
+  Epoch [280/300] Loss: 0.5869 Acc: 0.8061
+  Epoch [300/300] Loss: 0.5837 Acc: 0.8265
+  Best training loss: 0.5345
+
+==================================================
+  PLAINTEXT BASELINE RESULTS
+==================================================
+  Optimal Threshold: 0.20
+  Accuracy:  0.5600
+  AUC-ROC:   0.6111
+  F1-Score:  0.4211
+==================================================
+
+              precision    recall  f1-score   support
+
+    Survived       0.77      0.56      0.65        18
+        Died       0.33      0.57      0.42         7
+
+    accuracy                           0.56        25
+   macro avg       0.55      0.56      0.53        25
+weighted avg       0.65      0.56      0.58        25
+
+
+==================================================
+  5-FOLD CROSS-VALIDATION
+==================================================
+  Class weight for 'Died': 2.38
+
+--- Training on cuda for 300 epochs ---
+  Epoch [1/300] Loss: 0.9784 Acc: 0.7041
+  Epoch [20/300] Loss: 0.9745 Acc: 0.7041
+  Epoch [40/300] Loss: 0.9687 Acc: 0.6122
+  Epoch [60/300] Loss: 0.9649 Acc: 0.6735
+  Epoch [80/300] Loss: 0.9751 Acc: 0.5816
+  Epoch [100/300] Loss: 0.9614 Acc: 0.6224
+  Epoch [120/300] Loss: 0.9572 Acc: 0.6633
+  Epoch [140/300] Loss: 0.9228 Acc: 0.6939
+  Epoch [160/300] Loss: 0.7935 Acc: 0.7347
+  Epoch [180/300] Loss: 0.7263 Acc: 0.7449
+  Epoch [200/300] Loss: 0.7441 Acc: 0.7755
+  Epoch [220/300] Loss: 0.7113 Acc: 0.7653
+  Epoch [240/300] Loss: 0.6328 Acc: 0.8163
+  Epoch [260/300] Loss: 0.6927 Acc: 0.8163
+  Epoch [280/300] Loss: 0.6636 Acc: 0.8367
+  Epoch [300/300] Loss: 0.6731 Acc: 0.7959
+  Best training loss: 0.5985
+  Fold 1: Acc=0.6800  AUC=0.7778  F1=0.4286
+  Class weight for 'Died': 2.38
+
+--- Training on cuda for 300 epochs ---
+  Epoch [1/300] Loss: 0.9858 Acc: 0.2959
+  Epoch [20/300] Loss: 0.9798 Acc: 0.3776
+  Epoch [40/300] Loss: 0.9751 Acc: 0.3163
+  Epoch [60/300] Loss: 0.9631 Acc: 0.2959
+  Epoch [80/300] Loss: 0.9618 Acc: 0.4490
+  Epoch [100/300] Loss: 0.8842 Acc: 0.7653
+  Epoch [120/300] Loss: 0.7767 Acc: 0.7653
+  Epoch [140/300] Loss: 0.6715 Acc: 0.8265
+  Epoch [160/300] Loss: 0.6621 Acc: 0.8061
+  Epoch [180/300] Loss: 0.6229 Acc: 0.8061
+  Epoch [200/300] Loss: 0.5997 Acc: 0.8061
+  Epoch [220/300] Loss: 0.6551 Acc: 0.8367
+  Epoch [240/300] Loss: 0.5958 Acc: 0.8163
+  Epoch [260/300] Loss: 0.5678 Acc: 0.8061
+  Epoch [280/300] Loss: 0.5881 Acc: 0.8265
+  Epoch [300/300] Loss: 0.5676 Acc: 0.8265
+  Best training loss: 0.4975
+  Fold 2: Acc=0.6400  AUC=0.7143  F1=0.5263
+  Class weight for 'Died': 2.50
+
+--- Training on cuda for 300 epochs ---
+  Epoch [1/300] Loss: 1.0032 Acc: 0.2857
+  Epoch [20/300] Loss: 0.9855 Acc: 0.2857
+  Epoch [40/300] Loss: 0.9775 Acc: 0.6224
+  Epoch [60/300] Loss: 0.9720 Acc: 0.7245
+  Epoch [80/300] Loss: 0.9676 Acc: 0.6939
+  Epoch [100/300] Loss: 0.8735 Acc: 0.6633
+  Epoch [120/300] Loss: 0.8565 Acc: 0.7143
+  Epoch [140/300] Loss: 0.8035 Acc: 0.7653
+  Epoch [160/300] Loss: 0.7492 Acc: 0.8061
+  Epoch [180/300] Loss: 0.6188 Acc: 0.8571
+  Epoch [200/300] Loss: 0.6399 Acc: 0.8469
+  Epoch [220/300] Loss: 0.5649 Acc: 0.8367
+  Epoch [240/300] Loss: 0.5463 Acc: 0.8673
+  Epoch [260/300] Loss: 0.4802 Acc: 0.8571
+  Epoch [280/300] Loss: 0.5004 Acc: 0.8673
+  Epoch [300/300] Loss: 0.5429 Acc: 0.8878
+  Best training loss: 0.4636
+  Fold 3: Acc=0.6400  AUC=0.7279  F1=0.6087
+  Class weight for 'Died': 2.41
+
+--- Training on cuda for 300 epochs ---
+  Epoch [1/300] Loss: 0.9817 Acc: 0.3636
+  Epoch [20/300] Loss: 0.9770 Acc: 0.6364
+  Epoch [40/300] Loss: 0.9545 Acc: 0.6869
+  Epoch [60/300] Loss: 0.8893 Acc: 0.6566
+  Epoch [80/300] Loss: 0.7552 Acc: 0.7576
+  Epoch [100/300] Loss: 0.7323 Acc: 0.7576
+  Epoch [120/300] Loss: 0.7264 Acc: 0.7273
+  Epoch [140/300] Loss: 0.7062 Acc: 0.7071
+  Epoch [160/300] Loss: 0.6803 Acc: 0.7071
+  Epoch [180/300] Loss: 0.6534 Acc: 0.7576
+  Epoch [200/300] Loss: 0.6039 Acc: 0.7879
+  Epoch [220/300] Loss: 0.5916 Acc: 0.8081
+  Epoch [240/300] Loss: 0.5808 Acc: 0.7576
+  Epoch [260/300] Loss: 0.5879 Acc: 0.7677
+  Epoch [280/300] Loss: 0.5724 Acc: 0.7677
+  Epoch [300/300] Loss: 0.5762 Acc: 0.7778
+  Best training loss: 0.5477
+  Fold 4: Acc=0.5417  AUC=0.5546  F1=0.4211
+  Class weight for 'Died': 2.41
+
+--- Training on cuda for 300 epochs ---
+  Epoch [1/300] Loss: 0.9851 Acc: 0.3131
+  Epoch [20/300] Loss: 0.9755 Acc: 0.6162
+  Epoch [40/300] Loss: 0.9472 Acc: 0.3737
+  Epoch [60/300] Loss: 0.7215 Acc: 0.7677
+  Epoch [80/300] Loss: 0.7021 Acc: 0.8384
+  Epoch [100/300] Loss: 0.6206 Acc: 0.7879
+  Epoch [120/300] Loss: 0.5077 Acc: 0.8384
+  Epoch [140/300] Loss: 0.3972 Acc: 0.8687
+  Epoch [160/300] Loss: 0.4123 Acc: 0.8485
+  Epoch [180/300] Loss: 0.4033 Acc: 0.8788
+  Epoch [200/300] Loss: 0.3881 Acc: 0.8788
+  Epoch [220/300] Loss: 0.3485 Acc: 0.8788
+  Epoch [240/300] Loss: 0.3529 Acc: 0.8889
+  Epoch [260/300] Loss: 0.3483 Acc: 0.8788
+  Epoch [280/300] Loss: 0.3681 Acc: 0.8788
+  Epoch [300/300] Loss: 0.3338 Acc: 0.8889
+  Best training loss: 0.2988
+  Fold 5: Acc=0.6250  AUC=0.5882  F1=0.4706
+
+  AVERAGE: Acc=0.6253  AUC=0.6726  F1=0.4910
+==================================================
+
+Model saved to: c:\Users\dell\OneDrive\Desktop\MAJOR\Major-Project-FE-HL-SGD-\LSTM_Model_Training\lstm_baseline.pth

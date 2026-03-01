@@ -1,0 +1,31 @@
+FEDERATED AGGREGATION REPORT (STAGE 4.4)
+============================================================
+
+Method: Federated Averaging (FedAvg)
+Hospitals: 3
+Model: MortalityLSTM (5,921 parameters)
+
+CKKS-RNS Parameters:
+  Poly Modulus Degree: 8192
+  Coeff Moduli: [60, 40, 40, 60] bits
+  Security Level: 128-bit
+
+Timing Breakdown:
+  Operation                      Time (s)    
+  ------------------------------ ------------
+  Load Hospital A ciphertext   0.0096s
+  Load Hospital B ciphertext   0.0176s
+  Load Hospital C ciphertext   0.0188s
+  Homomorphic Aggregation       0.0027s
+  Decryption                    0.0025s
+  ------------------------------ ------------
+  Total Crypto Overhead          0.0052s
+
+Accuracy Verification:
+  Max Weight Error (enc vs plain): 8.94e-08
+  Avg Weight Error (enc vs plain): 1.15e-08
+  Verdict: NEGLIGIBLE
+
+Output Files:
+  global_model.pth           (encrypted FedAvg result)
+  global_model_plaintext.pth (plaintext FedAvg for comparison)

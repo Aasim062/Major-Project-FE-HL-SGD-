@@ -1,0 +1,30 @@
+{
+  "lstm.weight_ih_l0": [
+    128,
+    8
+  ],
+  "lstm.weight_hh_l0": [
+    128,
+    32
+  ],
+  "lstm.bias_ih_l0": [
+    128
+  ],
+  "lstm.bias_hh_l0": [
+    128
+  ],
+  "classifier.0.weight": [
+    16,
+    32
+  ],
+  "classifier.0.bias": [
+    16
+  ],
+  "classifier.3.weight": [
+    1,
+    16
+  ],
+  "classifier.3.bias": [
+    1
+  ]
+}

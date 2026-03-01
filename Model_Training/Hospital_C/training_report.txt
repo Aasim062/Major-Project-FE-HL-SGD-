@@ -1,0 +1,25 @@
+HOSPITAL C TRAINING REPORT (5-FOLD CV)
+======================================================================
+
+Dataset:
+  Patients: 41  |  Survived: 29  |  Died: 12
+
+Training Config:
+  Epochs: 300  |  LR: 0.002  |  Batch: 8
+  Loss: BCEWithLogitsLoss (weighted)  |  Optimizer: Adam
+
+Cross-Validation Results:
+  Fold   Acc        AUC        F1         Thresh    
+  ------ ---------- ---------- ---------- ----------
+  1      0.6667     0.5556     0.4000     0.75      
+  2      0.7500     0.6667     0.6667     0.20      
+  3      0.6250     0.5833     0.4000     0.20      
+  4      0.6250     0.2500     0.0000     0.50      
+  5      0.6250     0.4000     0.4000     0.55      
+  ------ ---------- ---------- ---------- ----------
+  AVG    0.6583     0.4911     0.3733     0.44      
+
+Final Model (retrained on all 41 patients):
+  Accuracy: 0.9512
+  AUC-ROC:  0.9914
+  F1-Score: 0.9167
