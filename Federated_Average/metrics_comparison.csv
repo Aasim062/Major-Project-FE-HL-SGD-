@@ -1,0 +1,2 @@
+round,enc_accuracy,enc_auc_roc,enc_f1_score,enc_precision,enc_recall,plain_accuracy,plain_auc_roc,plain_f1_score,plain_precision,plain_recall,diff_accuracy,diff_auc_roc,diff_f1_score,enc_time_s,agg_time_s,dec_time_s
+1,0.292683,0.498404,0.452830,0.292683,1.000000,0.292683,0.498404,0.452830,0.292683,1.000000,0.00e+00,0.00e+00,0.00e+00,0.046000,0.002700,0.002500
